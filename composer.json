@@ -1,0 +1,18 @@
+{
+    "name": "stack/fest",
+    "autoload": {
+        "psr-4": {
+            "Stack\\Fest\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Victor Kayk",
+            "email": "victorkayk77@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^5.4",
+        "ext-pdo": "*"
+    }
+}
