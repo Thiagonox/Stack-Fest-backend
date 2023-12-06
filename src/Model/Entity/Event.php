@@ -15,36 +15,59 @@ class Event
     private ?DateTime $createdAt;
     private ?DateTime $updatedAt;
     private ?DateTime $deletedAt;
-    private ?Address $address;
-    private ?Link $link;
+    private ?int $addressId;
+    private ?int $linkId;
     private Company $company;
     private array $eventTimes = [];
 
     public function __construct(
-        int       $id,
-        string    $name,
-        DateTime  $date,
-        string    $description,
-        int       $totalTickets,
-        bool      $deleted = false,
-        ?DateTime $createdAt = null,
-        ?DateTime $updatedAt = null,
-        ?DateTime $deletedAt = null,
-        ?Address  $address = null,
-        Company   $company
+        string   $name,
+        DateTime $date,
+        string   $description,
+        int      $totalTickets,
+        ?int     $addressId,
+        ?int     $linkId,
     )
     {
-        $this->id = $id;
         $this->name = $name;
         $this->date = $date;
         $this->description = $description;
         $this->totalTickets = $totalTickets;
-        $this->deleted = $deleted;
+        $this->deleted = false;
         $this->createdAt = $createdAt ?? new DateTime();
         $this->updatedAt = $updatedAt ?? new DateTime();
-        $this->deletedAt = $deletedAt;
-        $this->address = $address;
-        $this->company = $company;
+        $this->addressId = $addressId;
+        $this->linkId = $linkId;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getDate(): DateTime
+    {
+        return $this->date;
+    }
+
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    public function getTotalTickets(): int
+    {
+        return $this->totalTickets;
+    }
+
+    public function isDeleted(): bool
+    {
+        return $this->deleted;
     }
 
     public function getCreatedAt(): ?DateTime
@@ -77,14 +100,9 @@ class Event
         $this->deletedAt = $deletedAt;
     }
 
-    public function getAddress(): ?Address
+    public function getAddress(): ?int
     {
-        return $this->address;
-    }
-
-    public function setAddress(?Address $address): void
-    {
-        $this->address = $address;
+        return $this->addressId ?? null;
     }
 
     public function getCompany(): Company
@@ -97,14 +115,9 @@ class Event
         $this->company = $company;
     }
 
-    public function getLink(): ?Link
+    public function getLink(): ?int
     {
-        return $this->link;
-    }
-
-    public function setLink(?Link $link): void
-    {
-        $this->link = $link;
+        return $this->linkId ?? null;
     }
 
     public function getEventTimes(): array

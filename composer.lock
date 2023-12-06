@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d89b600b2a47c2c0700e99b54d74e034",
+    "content-hash": "96175e733f21bba83b060c01ce771460",
     "packages": [
         {
             "name": "firebase/php-jwt",
@@ -62,6 +62,55 @@
                 "source": "https://github.com/firebase/php-jwt/tree/v5.5.1"
             },
             "time": "2021-11-08T20:18:51+00:00"
+        },
+        {
+            "name": "marrios/mareaturborouter",
+            "version": "v0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edmariooliver/MareaTurboRouter2.git",
+                "reference": "e30a92c635febe8437d207a65cb960e1a53b4bad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/edmariooliver/MareaTurboRouter2/zipball/e30a92c635febe8437d207a65cb960e1a53b4bad",
+                "reference": "e30a92c635febe8437d207a65cb960e1a53b4bad",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.6",
+                "pestphp/pest": "^2.23"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MareaTurbo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Marrios Dev",
+                    "email": "edmariooliver@outlook.com"
+                }
+            ],
+            "description": "Route manager",
+            "keywords": [
+                "manager",
+                "mvc",
+                "router"
+            ],
+            "support": {
+                "issues": "https://github.com/edmariooliver/MareaTurboRouter2/issues",
+                "source": "https://github.com/edmariooliver/MareaTurboRouter2/tree/v0.1"
+            },
+            "time": "2023-10-16T20:24:41+00:00"
         }
     ],
     "packages-dev": [],

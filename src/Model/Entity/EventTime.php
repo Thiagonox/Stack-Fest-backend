@@ -15,22 +15,32 @@ class EventTime
     private Event $event;
 
     public function __construct(
-        int       $id,
-        DateTime  $time,
-        bool      $deleted = false,
-        ?DateTime $createdAt = null,
-        ?DateTime $updatedAt = null,
-        ?DateTime $deletedAt = null,
-        Event     $event
+        DateTime $time,
+        int      $eventId
     )
     {
-        $this->id = $id;
         $this->time = $time;
-        $this->deleted = $deleted;
-        $this->createdAt = $createdAt ?? new DateTime();
-        $this->updatedAt = $updatedAt ?? new DateTime();
-        $this->deletedAt = $deletedAt;
-        $this->event = $event;
+        $this->eventId = $eventId;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getTime(): DateTime
+    {
+        return $this->time;
+    }
+
+    public function setTime(DateTime $time): void
+    {
+        $this->time = $time;
+    }
+
+    public function getEventId(): int
+    {
+        return $this->eventId;
     }
 
     public function getCreatedAt(): ?DateTime

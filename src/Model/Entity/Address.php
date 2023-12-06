@@ -20,21 +20,15 @@ class Address
     private ?DateTime $deletedAt;
 
     public function __construct(
-        int       $id,
-        string    $street,
-        string    $city,
-        string    $state,
-        string    $zipCode,
-        string    $neighborhood,
-        string    $complement,
-        string    $number,
-        bool      $deleted = false,
-        ?DateTime $createdAt = null,
-        ?DateTime $updatedAt = null,
-        ?DateTime $deletedAt = null
+        string $street,
+        string $city,
+        string $state,
+        string $zipCode,
+        string $neighborhood,
+        string $complement,
+        string $number
     )
     {
-        $this->id = $id;
         $this->street = $street;
         $this->city = $city;
         $this->state = $state;
@@ -42,10 +36,51 @@ class Address
         $this->neighborhood = $neighborhood;
         $this->complement = $complement;
         $this->number = $number;
-        $this->deleted = $deleted;
-        $this->createdAt = $createdAt ?? new DateTime();
-        $this->updatedAt = $updatedAt ?? new DateTime();
-        $this->deletedAt = $deletedAt;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getStreet(): string
+    {
+        return $this->street;
+    }
+
+    public function getCity(): string
+    {
+        return $this->city;
+    }
+
+    public function getState(): string
+    {
+        return $this->state;
+    }
+
+    public function getZipCode(): string
+    {
+        return $this->zipCode;
+    }
+
+    public function getNeighborhood(): string
+    {
+        return $this->neighborhood;
+    }
+
+    public function getComplement(): string
+    {
+        return $this->complement;
+    }
+
+    public function getNumber(): string
+    {
+        return $this->number;
+    }
+
+    public function isDeleted(): bool
+    {
+        return $this->deleted;
     }
 
     public function getCreatedAt(): ?DateTime

@@ -3,9 +3,9 @@
 namespace Stack\Fest\Controller;
 
 use Exception;
+use MareaTurbo\Route;
 use Stack\Fest\Config\Request;
 use Stack\Fest\Config\Response;
-use Stack\Fest\Config\Route;
 use Stack\Fest\Model\DAO\CompanyDAO;
 use Stack\Fest\Model\Entity\Company;
 use Stack\Fest\Model\Service\AuthService;
@@ -15,8 +15,8 @@ class CompanyController
     public function __construct(
         protected AuthService $authService,
         protected CompanyDAO  $companyDAO,
-        protected Request    $request,
-        protected Response   $response
+        protected Request     $request,
+        protected Response    $response
     )
     {
     }

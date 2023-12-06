@@ -18,28 +18,43 @@ class Ticket
     private string $paymentMethod;
 
     public function __construct(
-        int       $id,
-        float     $price,
-        bool      $deleted = false,
-        ?DateTime $createdAt = null,
-        ?DateTime $updatedAt = null,
-        ?DateTime $deletedAt = null,
-        User      $user,
-        EventTime $eventTime,
-        Event     $event,
-        string    $paymentMethod
+        float  $price,
+        int    $userId,
+        int    $eventTimeId,
+        int    $eventId,
+        string $paymentMethod
     )
     {
-        $this->id = $id;
         $this->price = $price;
-        $this->deleted = $deleted;
-        $this->createdAt = $createdAt ?? new DateTime();
-        $this->updatedAt = $updatedAt ?? new DateTime();
-        $this->deletedAt = $deletedAt;
-        $this->user = $user;
-        $this->eventTime = $eventTime;
-        $this->event = $event;
         $this->paymentMethod = $paymentMethod;
+        $this->userId = $userId;
+        $this->eventTimeId = $eventTimeId;
+        $this->eventId = $eventId;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getPrice(): float
+    {
+        return $this->price;
+    }
+
+    public function getEventId(): int
+    {
+        return $this->eventId;
+    }
+
+    public function getEventTimeId(): int
+    {
+        return $this->eventTimeId;
+    }
+
+    public function getUserId(): int
+    {
+        return $this->userId;
     }
 
     public function getCreatedAt(): ?DateTime

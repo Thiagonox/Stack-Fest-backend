@@ -1,14 +1,18 @@
 <?php
+require __DIR__ . '/vendor/autoload.php';
 
-use Stack\Fest\Config\Router;
+use MareaTurbo\Router;
 use Stack\Fest\Controller\CompanyController;
 use Stack\Fest\Controller\EventController;
+use Stack\Fest\Controller\EventTimeController;
+use Stack\Fest\Controller\TicketController;
 use Stack\Fest\Controller\UserController;
 
-require __DIR__ . '/vendor/autoload.php';
 
 (new Router())->controllers([
     UserController::class,
     CompanyController::class,
-    EventController::class
+    EventController::class,
+    EventTimeController::class,
+    TicketController::class
 ]);

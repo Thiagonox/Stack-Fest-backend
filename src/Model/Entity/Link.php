@@ -14,20 +14,20 @@ class Link
     private ?DateTime $deletedAt;
 
     public function __construct(
-        int       $id,
-        string    $url,
-        bool      $deleted = false,
-        ?DateTime $createdAt = null,
-        ?DateTime $updatedAt = null,
-        ?DateTime $deletedAt = null
+        string $url,
     )
     {
-        $this->id = $id;
         $this->url = $url;
-        $this->deleted = $deleted;
-        $this->createdAt = $createdAt ?? new DateTime();
-        $this->updatedAt = $updatedAt ?? new DateTime();
-        $this->deletedAt = $deletedAt;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function getUrl(): string
+    {
+        return $this->url;
     }
 
     public function getCreatedAt(): ?DateTime

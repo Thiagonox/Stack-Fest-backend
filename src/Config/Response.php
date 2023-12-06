@@ -2,7 +2,8 @@
 
 namespace Stack\Fest\Config;
 
-class Response{
+class Response
+{
     public static function json(int $status, $dados = [])
     {
         http_response_code($status);
